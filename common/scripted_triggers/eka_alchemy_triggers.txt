@@ -1,0 +1,6 @@
+is_alchemist = {
+    OR = {
+        has_trait = alchemist
+        has_trait = alchemist_master
+    }
+}

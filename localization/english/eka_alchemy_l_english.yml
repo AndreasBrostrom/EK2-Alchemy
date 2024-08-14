@@ -29,3 +29,8 @@ l_english:
  court_position_purity_perk:0 "[GetPerk('purity_perk').GetName( ROOT.Char )]" 
  court_position_master_alchemist_perk:0 "[GetPerk('master_alchemist_perk').GetName( ROOT.Char )]" 
   
+ alchemy_decision:0 "Perform Alchemy"
+ alchemy_decision_desc:0 "Mix elements and herbs to create the create elixirs and potions. Doing so will boost my abilities or i could sell it to someone instead."
+ alchemy_decision_tooltip:0 "Create brews or elixirs or perform experiments"
+ alchemy_decision_effect_tooltip:0 "Allow you to select what type of alchemy you want to conduct"
+ alchemy_decision_confirm:0 "Lets go into my laboratory!"

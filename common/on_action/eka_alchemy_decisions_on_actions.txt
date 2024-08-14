@@ -1,0 +1,10 @@
+
+#stress_loss_experimentalist = {
+#	random_events = {
+#		100 = ek_stress_trait_coping_decisions.1151
+#		100 = ek_stress_trait_coping_decisions.1152
+#		100 = ek_stress_trait_coping_decisions.1153
+#		100 = ek_stress_trait_coping_decisions.1154
+#		100 = ek_stress_trait_coping_decisions.1155
+#	}
+#}
