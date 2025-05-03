@@ -4,5 +4,5 @@ tags={
 	"Decisions"
 	"Events"
 }
-supported_version="1.12.*"
+supported_version="1.15.*"
 path="mod/Elder Kings 2 - Alchemy DevBuild"
