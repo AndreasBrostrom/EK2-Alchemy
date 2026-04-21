@@ -1,0 +1,33 @@
+
+alchemy_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_misc.dds"
+	desc = alchemy_decision_desc
+	selection_tooltip = alchemy_decision_tooltip
+
+	ai_check_interval = 36
+
+	cooldown = { days = 1095 }
+
+	is_shown = { is_alchemist = yes }
+
+	effect = {
+		custom_tooltip = alchemy_decision_effect_tooltip
+
+		trigger_event = {
+			on_action = stress_loss_experimentalist
+		}
+	}
+	
+	ai_potential = {
+ 		is_alchemist = yes 
+	}
+
+	ai_will_do = {
+		base = 0
+
+		#modifier = {
+		#	add = 100
+		#	stress >= 10
+		#}
+	}
+}
