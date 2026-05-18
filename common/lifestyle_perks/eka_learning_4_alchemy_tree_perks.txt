@@ -31,8 +31,15 @@ herbalist_perk = {
     character_modifier = {
 		stress_gain_mult = -0.1
     }
-    
+
     effect = {
+        if = {
+            limit = {
+                has_perk = forager_perk
+                has_perk = metallurgist_perk
+            }
+            add_trait_force_tooltip = alchemist_novice
+        }
         #EK ADDITION: xp for unlocking perk
         if = {
             limit = { culture = { has_cultural_parameter = theologian_xp_rebate } }
@@ -74,6 +81,13 @@ forager_perk = {
     }
 
     effect = {
+        if = {
+            limit = {
+                has_perk = herbalist_perk
+                has_perk = forager_perk
+            }
+            add_trait_force_tooltip = alchemist_novice
+        }
         #EK ADDITION: xp for unlocking perk	
         if = {
             limit = { culture = { has_cultural_parameter = theologian_xp_rebate } }
@@ -115,6 +129,13 @@ metallurgist_perk = {
     }
 
     effect = {
+        if = {
+            limit = {
+                has_perk = herbalist_perk
+                has_perk = forager_perk
+            }
+            add_trait_force_tooltip = alchemist_novice
+        }
         #EK ADDITION: xp for unlocking perk
         if = {
             limit = { culture = { has_cultural_parameter = theologian_xp_rebate } }
@@ -123,7 +144,7 @@ metallurgist_perk = {
     }
 }
 
-alchemist_perk = {
+experimenter_perk = {
     lifestyle = learning_lifestyle
     tree = alchemy
     position = { 2 1 }
@@ -132,10 +153,13 @@ alchemist_perk = {
     parent = herbalist_perk
     parent = forager_perk
     parent = metallurgist_perk
-    
+
+    character_modifier = {
+        learning_per_stress_level = 2
+    }
+
     effect = {
-        #EK ADDITION: xp for unlocking perk	
-        add_trait_force_tooltip = alchemist
+        #EK ADDITION: xp for unlocking perk
         if = {
             limit = { culture = { has_cultural_parameter = theologian_xp_rebate } }
             add_learning_lifestyle_xp = 330
@@ -149,7 +173,7 @@ benefactor_perk = {
     position = { 1 2 }
     icon = node_learning
     
-    parent = alchemist_perk
+    parent = experimenter_perk
         
     character_modifier = {
         negate_health_penalty_add = 0.25
@@ -157,6 +181,11 @@ benefactor_perk = {
     }
 
     effect = {
+        if = {
+            limit = { has_perk = poisoner_perk }
+            remove_trait_force_tooltip = alchemist_novice
+            add_trait_force_tooltip = alchemist_expert
+        }
         #EK ADDITION: xp for unlocking perk
         if = {
             limit = { culture = { has_cultural_parameter = theologian_xp_rebate } }
@@ -178,6 +207,11 @@ poisoner_perk = {
     }
 
     effect = {
+        if = {
+            limit = { has_perk = benefactor_perk }
+            remove_trait_force_tooltip = alchemist_novice
+            add_trait_force_tooltip = alchemist_expert
+        }
         #EK ADDITION: xp for unlocking perk
         if = {
             limit = { culture = { has_cultural_parameter = theologian_xp_rebate } }
@@ -230,7 +264,7 @@ purity_perk = {
     }
 }
 
-master_alchemist_perk = {
+alchemist_perk = {
     lifestyle = learning_lifestyle
     tree = alchemy
     position = { 2 5 }
@@ -239,7 +273,7 @@ master_alchemist_perk = {
     parent = purity_perk
     
     effect = {
-        remove_trait_force_tooltip = alchemist
+        remove_trait_force_tooltip = alchemist_expert
         add_trait_force_tooltip = alchemist_master
         #EK ADDITION: xp for unlocking perk
         if = {
